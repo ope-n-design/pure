@@ -18,7 +18,11 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       framer-motion:
+<<<<<<< HEAD
         specifier: ^12.23.5
+=======
+        specifier: ^12.20.1
+>>>>>>> e880b95f (Initial commit for deployment)
         version: 12.23.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: ^19.0.0

@@ -1,11 +1,22 @@
 import { scrollToSection } from "../utils/scroll";
+HEAD
 import React from "react";
 
 interface SidebarProps {
+
+
+export default function Sidebar({
+  introUnlocked,
+  isMobile,
+  isSidebarOpen,
+  setSidebarOpen,
+}: {
+ e880b95f (Initial commit for deployment)
   introUnlocked: boolean;
   isMobile?: boolean;
   isSidebarOpen?: boolean;
   setSidebarOpen?: (value: boolean) => void;
+HEAD
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -22,6 +33,13 @@ const Sidebar: React.FC<SidebarProps> = ({
     if (isMobile && setSidebarOpen) {
       setSidebarOpen(false);
     }
+
+}) {
+  const handleClick = (id: string) => {
+    if (!introUnlocked) return;
+    scrollToSection(id);
+    if (isMobile && setSidebarOpen) setSidebarOpen(false); // 모바일에선 클릭 후 자동 닫기
+e880b95f (Initial commit for deployment)
   };
 
   const menuItems = [
@@ -50,21 +68,37 @@ const Sidebar: React.FC<SidebarProps> = ({
             ))}
           </div>
           <img
+HEAD
             src={logoImage}
+
+            src="/public/image/logo.png"
+e880b95f (Initial commit for deployment)
             alt="로고"
             className="w-20 h-20 object-contain mt-6"
           />
         </div>
       </aside>
 
+HEAD
       {/* ✅ 모바일용 사이드바 */}
       {isMobile && isSidebarOpen && (
         <>
+
+      {/* ✅ 모바일용 사이드바 (슬라이드 인) */}
+      {isMobile && isSidebarOpen && (
+        <>
+          {/* 배경 오버레이 */}
+e880b95f (Initial commit for deployment)
           <div
             className="fixed inset-0 bg-black/50 z-40"
             onClick={() => setSidebarOpen?.(false)}
           />
+HEAD
           <aside className="fixed top-0 left-0 h-full w-36 bg-white z-50 shadow-lg p-4">
+
+          {/* 사이드바 본체 */}
+          <aside className="fixed top-0 left-0 h-full w-48 bg-white z-50 shadow-lg p-4">
+e880b95f (Initial commit for deployment)
             <button
               className="mb-6 text-xl"
               onClick={() => setSidebarOpen?.(false)}
@@ -84,7 +118,11 @@ const Sidebar: React.FC<SidebarProps> = ({
               ))}
             </div>
             <img
+ HEAD
               src={logoImage}
+
+              src="/public/image/logo.png"
+e880b95f (Initial commit for deployment)
               alt="로고"
               className="w-20 h-20 object-contain mt-6"
             />
@@ -93,6 +131,10 @@ const Sidebar: React.FC<SidebarProps> = ({
       )}
     </>
   );
+ HEAD
 };
 
 export default Sidebar;
+
+}
+e880b95f (Initial commit for deployment)

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaYoutube } from "react-icons/fa";
 
+HEAD
 // 🔽 Work 타입 정의 추가
 interface Work {
   title: string;
@@ -15,6 +16,10 @@ interface Work {
 
 export default function Works() {
   const works: Work[] = [
+
+export default function Works() {
+  const works = [
+e880b95f (Initial commit for deployment)
     {
       title: "전주정원산업박람회",
       award: "대상",
@@ -29,6 +34,20 @@ export default function Works() {
       period: "2025",
       images: ["/images/전남정원.png"],
       videoUrl: "https://youtu.be/CpuszDeLFqw?si=5GKx4G7BX9WZmJNc",
+    },
+    {
+      title: "고창 안현마을 시공",
+      period: "2025.05~.06",
+      client: "안현마을",
+      role: "시공/투시도",
+      images: ["/images/안현마을(1).jpg", "/images/안현마을(2).jpg", "/images/안현마을(3).jpg"],
+    },
+    {
+      title: "함평자연생태공원 시공",
+      period: "2025.05~.06",
+      client: "함평군",
+      role: "시공/투시도",
+      images: ["/images/동양란관(1).jpg", "/images/동양란관(2).jpg", "/images/동양란관(3).jpg"],
     },
     {
       title: "고창군 성내어울림체육센터 디자인",
@@ -64,9 +83,13 @@ export default function Works() {
 
   return (
     <section id="works" className="py-16 px-6">
+HEAD
       <h2 className="text-2xl font-serifTitle text-forest mb-10">
         실적 및 수상
       </h2>
+
+      <h2 className="text-2xl font-serifTitle text-forest mb-10">실적 및 수상</h2>
+e880b95f (Initial commit for deployment)
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {works.map((work) => (
           <WorkCard key={work.title} work={work} />
@@ -76,10 +99,16 @@ export default function Works() {
   );
 }
 
+HEAD
 // 🔽 WorkCard의 props 타입 명시
 function WorkCard({ work }: { work: Work }) {
   const validImages = (work.images || []).filter(
     (src) => typeof src === "string" && src.trim() !== ""
+
+function WorkCard({ work }: { work: any }) {
+  const validImages: string[] = (work.images || []).filter(
+    (src: string) => typeof src === "string" && src.trim() !== ""
+e880b95f (Initial commit for deployment)
   );
   const imageCount = validImages.length;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -114,7 +143,11 @@ function WorkCard({ work }: { work: Work }) {
                 width: `${imageCount * 100}%`,
               }}
             >
+HEAD
               {validImages.map((src, i) => (
+=======
+              {validImages.map((src: string, i: number) => (
+e880b95f (Initial commit for deployment)
                 <div
                   key={`${work.title}-${i}`}
                   className="flex-shrink-0 w-full flex items-center justify-center"
