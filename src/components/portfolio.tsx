@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const projects = [
   {
     images: [
@@ -100,6 +101,81 @@ const projects: { images: ProjectImage[] }[] = [
       { src: "/portfolio/L.png", title: "공원 식재", description: "식재 컨설팅 및 디자인(2024.10)" },
       { src: "/portfolio/O.png", title: "유원지 조성", description: "식재 컨설팅 및 디자인(2024.07)" },
 >>>>>>> e880b95f (Initial commit for deployment)
+=======
+const projects = [
+  {
+    images: [
+      {
+        src: "/portfolio/M.png",
+        title: "건축물 조성",
+        description: "디자인(2024.08)",
+      },
+      {
+        src: "/portfolio/P.png",
+        title: "어린이공원 조성",
+        description: "식재 컨설팅 및 디자인(2024.02)",
+      },
+      {
+        src: "/portfolio/H.png",
+        title: "공원 쉼터",
+        description: "디자인(2025.04)",
+      },
+      {
+        src: "/portfolio/D.png",
+        title: "구도심 거리 조성",
+        description: "디자인(2025.03)",
+      },
+      {
+        src: "/portfolio/C.png",
+        title: "대나무숲 공원",
+        description: "식재 컨설팅 및 디자인(2025.03.04)",
+      },
+      {
+        src: "/portfolio/B.png",
+        title: "소공원",
+        description: "식재 컨설팅 및 디자인(2025.02)",
+      },
+      {
+        src: "/portfolio/E.png",
+        title: "메타세쿼이아 식재",
+        description: "식재 컨설팅 및 디자인(2025.04)",
+      },
+      {
+        src: "/portfolio/F.png",
+        title: "공원 조성",
+        description: "디자인(2024.11)",
+      },
+      {
+        src: "/portfolio/G.png",
+        title: "데크로드 조성",
+        description: "디자인(2025.04)",
+      },
+      {
+        src: "/portfolio/I.png",
+        title: "전시관 조성",
+        description: "식재/시공 및 디자인(2025.05)",
+      },
+      {
+        src: "/portfolio/J.png",
+        title: "드론센터 조성",
+        description: "디자인(2024.12)",
+      },
+      {
+        src: "/portfolio/K.png",
+        title: "건축물 조성",
+        description: "디자인(2024.11)",
+      },
+      {
+        src: "/portfolio/L.png",
+        title: "공원 식재",
+        description: "식재 컨설팅 및 디자인(2024.10)",
+      },
+      {
+        src: "/portfolio/O.png",
+        title: "유원지 조성",
+        description: "식재 컨설팅 및 디자인(2024.07)",
+      },
+>>>>>>> c768ebde (실적추가)
     ],
   },
 ];
@@ -111,14 +187,20 @@ export default function Portfolio() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c768ebde (실적추가)
   const [modalImage, setModalImage] = useState<{
     src: string;
     title: string;
     description: string;
   } | null>(null);
+<<<<<<< HEAD
 =======
   const [modalImage, setModalImage] = useState<ProjectImage | null>(null);
 >>>>>>> e880b95f (Initial commit for deployment)
+=======
+>>>>>>> c768ebde (실적추가)
 
   useEffect(() => {
     const container = containerRef.current;
@@ -157,17 +239,23 @@ export default function Portfolio() {
 
       setIsScrolling(true);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c768ebde (실적추가)
       if (e.deltaY < 0) {
         containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
       } else {
         containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
       }
+<<<<<<< HEAD
 =======
       containerRef.current.scrollBy({
         left: e.deltaY < 0 ? -300 : 300,
         behavior: "smooth",
       });
 >>>>>>> e880b95f (Initial commit for deployment)
+=======
+>>>>>>> c768ebde (실적추가)
       setTimeout(() => setIsScrolling(false), 600);
     };
 
@@ -185,9 +273,13 @@ export default function Portfolio() {
       </h2>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> e880b95f (Initial commit for deployment)
+=======
+
+>>>>>>> c768ebde (실적추가)
       <div
         id="portfolio-scroll-area"
         className="w-full overflow-hidden min-h-[90vh] flex items-center"
@@ -195,10 +287,14 @@ export default function Portfolio() {
         <div
           ref={containerRef}
 <<<<<<< HEAD
+<<<<<<< HEAD
           className="overflow-x-scroll no-scrollbar flex items-center space-x-10 px-[50vw] snap-x snap-mandatory transition-all opacity duration-300 ease-in-out py-40"
 =======
           className="overflow-x-scroll no-scrollbar flex items-center space-x-10 px-[50vw] snap-x snap-mandatory transition-all duration-300 ease-in-out py-40"
 >>>>>>> e880b95f (Initial commit for deployment)
+=======
+          className="overflow-x-scroll no-scrollbar flex items-center space-x-10 px-[50vw] snap-x snap-mandatory transition-all opacity duration-300 ease-in-out py-40"
+>>>>>>> c768ebde (실적추가)
         >
           {projects[0].images.map((image, idx) => {
             const isCenter = idx === centerIdx;
@@ -230,14 +326,20 @@ export default function Portfolio() {
                     className="w-full h-full object-cover rounded-lg cursor-zoom-in pointer-events-auto"
                     onClick={() => {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c768ebde (실적추가)
                       setModalImage({
                         src: image.src,
                         title: image.title,
                         description: image.description,
                       });
+<<<<<<< HEAD
 =======
                       setModalImage(image);
 >>>>>>> e880b95f (Initial commit for deployment)
+=======
+>>>>>>> c768ebde (실적추가)
                       setIsModalOpen(true);
                     }}
                   />
@@ -246,10 +348,14 @@ export default function Portfolio() {
                 {isCenter && (
                   <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4 pointer-events-none">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <h3 className="text-2xl md:text-2x1 font-bold drop-shadow-md">
 =======
                     <h3 className="text-2xl md:text-2xl font-bold drop-shadow-md">
 >>>>>>> e880b95f (Initial commit for deployment)
+=======
+                    <h3 className="text-2xl md:text-2x1 font-bold drop-shadow-md">
+>>>>>>> c768ebde (실적추가)
                       {image.title}
                     </h3>
                     <p className="mt-2 text-sm md:text-sm font-bold drop-shadow-md">
@@ -263,9 +369,12 @@ export default function Portfolio() {
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> e880b95f (Initial commit for deployment)
+=======
+>>>>>>> c768ebde (실적추가)
       {isModalOpen && modalImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"

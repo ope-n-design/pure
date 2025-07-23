@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { FaYoutube } from "react-icons/fa";
 
+<<<<<<< HEAD
 HEAD
+=======
+>>>>>>> c768ebde (실적추가)
 // 🔽 Work 타입 정의 추가
 interface Work {
   title: string;
@@ -14,12 +17,17 @@ interface Work {
   videoUrl?: string;
 }
 
+<<<<<<< HEAD
 export default function Works() {
   const works: Work[] = [
 
 export default function Works() {
   const works = [
 e880b95f (Initial commit for deployment)
+=======
+export default function Works() {
+  const works: Work[] = [
+>>>>>>> c768ebde (실적추가)
     {
       title: "전주정원산업박람회",
       award: "대상",
@@ -34,20 +42,6 @@ e880b95f (Initial commit for deployment)
       period: "2025",
       images: ["/images/전남정원.png"],
       videoUrl: "https://youtu.be/CpuszDeLFqw?si=5GKx4G7BX9WZmJNc",
-    },
-   {
-      title: "함평자연생태공원 동양란관 시공",
-      period: "2025.05~.06",
-      client: "함평군",
-      role: "시공/투시도",
-      images: ["/images/동양란관(1).jpg"], ["/images/동양란관(2).jpg"], ["/images/동양란관(3).jpg"],
-    },
-    {
-      title: "고창군 안현마을 시공",
-      period: "2025.06~.07",
-      client: "개인",
-      role: "시공/투시도",
-      images: ["/images/안현마을(1).jpg"], ["/images/안현마을(2).jpg"], ["/images/안현마을(3).jpg"],
     },
     {
       title: "고창 안현마을 시공",
@@ -97,6 +91,7 @@ e880b95f (Initial commit for deployment)
 
   return (
     <section id="works" className="py-16 px-6">
+<<<<<<< HEAD
 HEAD
       <h2 className="text-2xl font-serifTitle text-forest mb-10">
         실적 및 수상
@@ -104,6 +99,11 @@ HEAD
 
       <h2 className="text-2xl font-serifTitle text-forest mb-10">실적 및 수상</h2>
 e880b95f (Initial commit for deployment)
+=======
+      <h2 className="text-2xl font-serifTitle text-forest mb-10">
+        실적 및 수상
+      </h2>
+>>>>>>> c768ebde (실적추가)
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {works.map((work) => (
           <WorkCard key={work.title} work={work} />
@@ -113,16 +113,22 @@ e880b95f (Initial commit for deployment)
   );
 }
 
+<<<<<<< HEAD
 HEAD
+=======
+>>>>>>> c768ebde (실적추가)
 // 🔽 WorkCard의 props 타입 명시
 function WorkCard({ work }: { work: Work }) {
   const validImages = (work.images || []).filter(
     (src) => typeof src === "string" && src.trim() !== ""
+<<<<<<< HEAD
 
 function WorkCard({ work }: { work: any }) {
   const validImages: string[] = (work.images || []).filter(
     (src: string) => typeof src === "string" && src.trim() !== ""
 e880b95f (Initial commit for deployment)
+=======
+>>>>>>> c768ebde (실적추가)
   );
   const imageCount = validImages.length;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -157,11 +163,15 @@ e880b95f (Initial commit for deployment)
                 width: `${imageCount * 100}%`,
               }}
             >
+<<<<<<< HEAD
 HEAD
               {validImages.map((src, i) => (
 =======
               {validImages.map((src: string, i: number) => (
 e880b95f (Initial commit for deployment)
+=======
+              {validImages.map((src, i) => (
+>>>>>>> c768ebde (실적추가)
                 <div
                   key={`${work.title}-${i}`}
                   className="flex-shrink-0 w-full flex items-center justify-center"
