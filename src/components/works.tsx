@@ -35,6 +35,20 @@ e880b95f (Initial commit for deployment)
       images: ["/images/전남정원.png"],
       videoUrl: "https://youtu.be/CpuszDeLFqw?si=5GKx4G7BX9WZmJNc",
     },
+   {
+      title: "함평자연생태공원 동양란관 시공",
+      period: "2025.05~.06",
+      client: "함평군",
+      role: "시공/투시도",
+      images: ["/images/동양란관(1).jpg"], ["/images/동양란관(2).jpg"], ["/images/동양란관(3).jpg"],
+    },
+    {
+      title: "고창군 안현마을 시공",
+      period: "2025.06~.07",
+      client: "개인",
+      role: "시공/투시도",
+      images: ["/images/안현마을(1).jpg"], ["/images/안현마을(2).jpg"], ["/images/안현마을(3).jpg"],
+    },
     {
       title: "고창 안현마을 시공",
       period: "2025.05~.06",

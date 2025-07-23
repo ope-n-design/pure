@@ -161,8 +161,7 @@ export default function App() {
       <main ref={mainRef} className="w-full md:w-4/5 scroll-smooth">
         {isMobile ? (
           <>
-            <Intro onFinish={() => {}} isMobile={true} />
-            <About onFinish={() => {}} isMobile={true} />
+            <About onFinish={() => setAboutDone(true)} isMobile={isMobile} />
             <ScrollOverlaySection />
             <Portfolio />
             <Works />
@@ -171,10 +170,10 @@ export default function App() {
         ) : (
           <>
             {!introDone && (
-              <Intro onFinish={() => setIntroDone(true)} isMobile={false} />
+              <Intro onFinish={() => setIntroDone(true)} isMobile={isMobile} />
             )}
             {introDone && !aboutDone && (
-              <About onFinish={() => setAboutDone(true)} isMobile={false} />
+              <About onFinish={() => setAboutDone(true)} isMobile={isMobile} />
             )}
             {introDone && aboutDone && (
               <>
