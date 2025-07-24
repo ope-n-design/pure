@@ -2,8 +2,6 @@ import { FaYoutube } from "react-icons/fa";
 
 export default function Contact() {
   return (
-<<<<<<< HEAD
-<<<<<<< HEAD
     <section id="contact" className="min-h-screen px-6 py-20 sm:px-4 sm:py-12 bg-white">
       <h2 className="text-2xl font-serifTitle text-forest4">문의</h2>
       <p className="text-gray-600 mb-4">이메일 및 연락처 정보</p>
@@ -16,15 +14,12 @@ export default function Contact() {
       </p>
 
       <div className="flex items-center space-x-2 mt-8">
-=======
     <section id="contact" className="min-h-screen p-8">
       <h2 className="text-2xl font-serifTitle text-forest4">문의</h2>
       <p className="text-gray-600 mb-4">이메일 및 연락처 정보</p>
 
       {/* 유튜브 아이콘 링크 */}
       <div className="flex items-center space-x-2 mt-4">
->>>>>>> e880b95f (Initial commit for deployment)
-=======
     <section id="contact" className="min-h-screen px-6 py-20 sm:px-4 sm:py-12 bg-white">
       <h2 className="text-2xl font-serifTitle text-forest4">문의</h2>
       <p className="text-gray-600 mb-4">이메일 및 연락처 정보</p>
@@ -37,26 +32,19 @@ export default function Contact() {
       </p>
 
       <div className="flex items-center space-x-2 mt-8">
->>>>>>> c768ebde (실적추가)
         <a
           href="https://www.youtube.com/@순숲"
           target="_blank"
           rel="noopener noreferrer"
-<<<<<<< HEAD
-<<<<<<< HEAD
           className="py-4 px-4 bg-forest-light rounded-lg hover:bg-forest transition-colors duration-300"
         >
           <FaYoutube size={32} className="text-red-500" />
-=======
           className="py-16 px-6 bg-forest-light rounded-lg"
         >
           <FaYoutube />
->>>>>>> e880b95f (Initial commit for deployment)
-=======
           className="py-4 px-4 bg-forest-light rounded-lg hover:bg-forest transition-colors duration-300"
         >
           <FaYoutube size={32} className="text-red-500" />
->>>>>>> c768ebde (실적추가)
         </a>
         <span className="text-gray-600 text-sm">YouTube 채널</span>
       </div>
