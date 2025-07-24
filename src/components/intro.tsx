@@ -15,7 +15,6 @@ interface IntroProps {
 }
 
 export default function Intro({ onFinish, isMobile }: IntroProps) {
-=======
   onFinish: () => void;
   isMobile: boolean;
 }) {
