@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
@@ -99,7 +97,6 @@ const Intro: React.FC<IntroProps> = ({ onFinish, isMobile }) => {
 };
 
 export default Intro;
-=======
 import { useState, useEffect, useRef } from "react";
 import "./index.css";
 import Sidebar from "./components/sidebar";
@@ -109,11 +106,9 @@ import ScrollOverlaySection from "./components/ScrollOverlaySection";
 import Portfolio from "./components/portfolio";
 import Works from "./components/works";
 import Contact from "./components/contact";
-=======
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
->>>>>>> c768ebde (실적추가)
 
 // ✅ 타입 명시
 interface IntroProps {
@@ -207,11 +202,7 @@ const Intro: React.FC<IntroProps> = ({ onFinish, isMobile }) => {
       </h1>
     </section>
   );
-<<<<<<< HEAD
 }
->>>>>>> e880b95f (Initial commit for deployment)
-=======
 };
 
 export default Intro;
->>>>>>> c768ebde (실적추가)
