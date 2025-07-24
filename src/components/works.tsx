@@ -56,11 +56,7 @@ export default function Works() {
       period: "2024.11.",
       client: "고창군",
       role: "시공/투시도",
-      images: [
-        "/images/죽산 (8).jpg",
-        "/images/죽산 (9).jpg",
-        "/images/죽산랜.jpg",
-      ],
+      images: ["/images/죽산 (8).jpg", "/images/죽산 (9).jpg", "/images/죽산랜.jpg"],
     },
     {
       title: "고창군 장두마을 시공",
