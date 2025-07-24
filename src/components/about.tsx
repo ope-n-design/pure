@@ -1,25 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 export default function About({ onFinish }: { onFinish: () => void }) {
-=======
 export default function About({ onFinish, isMobile }: { onFinish: () => void; isMobile: boolean }) {
->>>>>>> e880b95f (Initial commit for deployment)
-=======
 export default function About({ onFinish }: { onFinish: () => void }) {
->>>>>>> c768ebde (실적추가)
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.8 });
 
   const [step, setStep] = useState(0);
   const [locked, setLocked] = useState(false);
   const [finalVisible, setFinalVisible] = useState(false);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c768ebde (실적추가)
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -28,11 +18,6 @@ export default function About({ onFinish }: { onFinish: () => void }) {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-<<<<<<< HEAD
-=======
->>>>>>> e880b95f (Initial commit for deployment)
-=======
->>>>>>> c768ebde (실적추가)
 
   useEffect(() => {
     if (isMobile) {
