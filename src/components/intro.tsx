@@ -1,19 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c768ebde (실적추가)
 export default function Intro({
   onFinish,
   isMobile,
 }: {
-<<<<<<< HEAD
   onFinish: () => void;
   isMobile: boolean;
 }) {
-=======
 // ✅ props 타입을 컴포넌트 밖에서 선언
 interface IntroProps {
   onFinish: () => void;
@@ -21,12 +15,10 @@ interface IntroProps {
 }
 
 export default function Intro({ onFinish, isMobile }: IntroProps) {
->>>>>>> e880b95f (Initial commit for deployment)
 =======
   onFinish: () => void;
   isMobile: boolean;
 }) {
->>>>>>> c768ebde (실적추가)
   const ref = useRef(null);
   const [wheelCount, setWheelCount] = useState(0);
   const [startFadeOut, setStartFadeOut] = useState(false);
@@ -62,10 +54,6 @@ export default function Intro({ onFinish, isMobile }: IntroProps) {
     }
   }, [progress, startFadeOut, onFinish, isMobile]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c768ebde (실적추가)
   // ✅ 모바일에서도 opacity: 1 명시
   const videoMotionProps = isMobile
     ? { opacity: 1 }
@@ -75,11 +63,6 @@ export default function Intro({ onFinish, isMobile }: IntroProps) {
         opacity,
       };
 
-<<<<<<< HEAD
-=======
->>>>>>> e880b95f (Initial commit for deployment)
-=======
->>>>>>> c768ebde (실적추가)
   return (
     <section
       ref={ref}
@@ -90,10 +73,7 @@ export default function Intro({ onFinish, isMobile }: IntroProps) {
     >
       <motion.div
         className="absolute top-0 left-0 w-full h-full z-0"
-<<<<<<< HEAD
-<<<<<<< HEAD
         animate={videoMotionProps}
-=======
         animate={
           isMobile
             ? {}
@@ -103,10 +83,7 @@ export default function Intro({ onFinish, isMobile }: IntroProps) {
                 opacity,
               }
         }
->>>>>>> e880b95f (Initial commit for deployment)
-=======
         animate={videoMotionProps}
->>>>>>> c768ebde (실적추가)
         transition={{
           scaleX: { duration: 2 },
           scaleY: { duration: 2 },
