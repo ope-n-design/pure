@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { FaYoutube } from "react-icons/fa";
 
-HEAD
-// 🔽 Work 타입 정의 추가
+// Work 타입 정의
 interface Work {
   title: string;
   award?: string;
@@ -16,10 +15,6 @@ interface Work {
 
 export default function Works() {
   const works: Work[] = [
-
-export default function Works() {
-  const works = [
-e880b95f (Initial commit for deployment)
     {
       title: "전주정원산업박람회",
       award: "대상",
@@ -35,7 +30,7 @@ e880b95f (Initial commit for deployment)
       images: ["/images/전남정원.png"],
       videoUrl: "https://youtu.be/CpuszDeLFqw?si=5GKx4G7BX9WZmJNc",
     },
-   {
+    {
       title: "함평자연생태공원 동양란관 시공",
       period: "2025.05~.06",
       client: "함평군",
@@ -50,20 +45,6 @@ e880b95f (Initial commit for deployment)
       images: ["/images/안현마을(11).jpg", "/images/안현마을(22).jpg", "/images/안현마을(33).jpg"],
     },
     {
-      title: "고창 안현마을 시공",
-      period: "2025.05~.06",
-      client: "안현마을",
-      role: "시공/투시도",
-      images: ["/images/안현마을(1).jpg", "/images/안현마을(2).jpg", "/images/안현마을(3).jpg"],
-    },
-    {
-      title: "함평자연생태공원 시공",
-      period: "2025.05~.06",
-      client: "함평군",
-      role: "시공/투시도",
-      images: ["/images/동양란관(1).jpg", "/images/동양란관(2).jpg", "/images/동양란관(3).jpg"],
-    },
-    {
       title: "고창군 성내어울림체육센터 디자인",
       period: "2025.04~.06",
       client: "고창군",
@@ -75,35 +56,21 @@ e880b95f (Initial commit for deployment)
       period: "2024.11.",
       client: "고창군",
       role: "시공/투시도",
-      images: [
-        "/images/죽산 (8).jpg",
-        "/images/죽산 (9).jpg",
-        "/images/죽산랜.jpg",
-      ],
+      images: ["/images/죽산 (8).jpg", "/images/죽산 (9).jpg", "/images/죽산랜.jpg"],
     },
     {
       title: "고창군 장두마을 시공",
       period: "2024.10.",
       client: "고창군",
       role: "시공/투시도",
-      images: [
-        "/images/장두 (1).jpg",
-        "/images/장두 (2).jpg",
-        "/images/장두 (3).jpg",
-        "/images/장두 (4).jpg",
-      ],
+      images: ["/images/장두 (1).jpg", "/images/장두 (2).jpg", "/images/장두 (3).jpg", "/images/장두 (4).jpg"],
     },
   ];
 
   return (
     <section id="works" className="py-16 px-6">
-HEAD
-      <h2 className="text-2xl font-serifTitle text-forest mb-10">
-        실적 및 수상
-      </h2>
-
       <h2 className="text-2xl font-serifTitle text-forest mb-10">실적 및 수상</h2>
-e880b95f (Initial commit for deployment)
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {works.map((work) => (
           <WorkCard key={work.title} work={work} />
@@ -113,16 +80,9 @@ e880b95f (Initial commit for deployment)
   );
 }
 
-HEAD
-// 🔽 WorkCard의 props 타입 명시
 function WorkCard({ work }: { work: Work }) {
   const validImages = (work.images || []).filter(
     (src) => typeof src === "string" && src.trim() !== ""
-
-function WorkCard({ work }: { work: any }) {
-  const validImages: string[] = (work.images || []).filter(
-    (src: string) => typeof src === "string" && src.trim() !== ""
-e880b95f (Initial commit for deployment)
   );
   const imageCount = validImages.length;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -157,11 +117,7 @@ e880b95f (Initial commit for deployment)
                 width: `${imageCount * 100}%`,
               }}
             >
-HEAD
               {validImages.map((src, i) => (
-
-              {validImages.map((src: string, i: number) => (
-e880b95f (Initial commit for deployment)
                 <div
                   key={`${work.title}-${i}`}
                   className="flex-shrink-0 w-full flex items-center justify-center"
@@ -196,9 +152,7 @@ e880b95f (Initial commit for deployment)
       <div className="p-4 space-y-1">
         {work.title && <h3 className="text-lg font-semibold">{work.title}</h3>}
         {work.award && <p className="text-sm text-gray-500">{work.award}</p>}
-        {work.description && (
-          <p className="text-sm text-gray-600">{work.description}</p>
-        )}
+        {work.description && <p className="text-sm text-gray-600">{work.description}</p>}
         {(work.period || work.client || work.role) && (
           <div className="text-sm text-gray-400 mt-2 space-y-1">
             {work.period && (
