@@ -1,79 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
-
-const projects = [
-  {
-    images: [
-      {
-        src: "/portfolio/M.png",
-        title: "건축물 조성",
-        description: "디자인(2024.08)",
-      },
-      {
-        src: "/portfolio/P.png",
-        title: "어린이공원 조성",
-        description: "식재 컨설팅 및 디자인(2024.02)",
-      },
-      {
-        src: "/portfolio/H.png",
-        title: "공원 쉼터",
-        description: "디자인(2025.04)",
-      },
-      {
-        src: "/portfolio/D.png",
-        title: "구도심 거리 조성",
-        description: "디자인(2025.03)",
-      },
-      {
-        src: "/portfolio/C.png",
-        title: "대나무숲 공원",
-        description: "식재 컨설팅 및 디자인(2025.03.04)",
-      },
-      {
-        src: "/portfolio/B.png",
-        title: "소공원",
-        description: "식재 컨설팅 및 디자인(2025.02)",
-      },
-      {
-        src: "/portfolio/E.png",
-        title: "메타세쿼이아 식재",
-        description: "식재 컨설팅 및 디자인(2025.04)",
-      },
-      {
-        src: "/portfolio/F.png",
-        title: "공원 조성",
-        description: "디자인(2024.11)",
-      },
-      {
-        src: "/portfolio/G.png",
-        title: "데크로드 조성",
-        description: "디자인(2025.04)",
-      },
-      {
-        src: "/portfolio/I.png",
-        title: "전시관 조성",
-        description: "식재/시공 및 디자인(2025.05)",
-      },
-      {
-        src: "/portfolio/J.png",
-        title: "드론센터 조성",
-        description: "디자인(2024.12)",
-      },
-      {
-        src: "/portfolio/K.png",
-        title: "건축물 조성",
-        description: "디자인(2024.11)",
-      },
-      {
-        src: "/portfolio/L.png",
-        title: "공원 식재",
-        description: "식재 컨설팅 및 디자인(2024.10)",
-      },
-      {
-        src: "/portfolio/O.png",
-        title: "유원지 조성",
-        description: "식재 컨설팅 및 디자인(2024.07)",
-      },
+import { useEffect, useRef, useState } from "react";
 
 type ProjectImage = {
   src: string;
@@ -98,7 +24,6 @@ const projects: { images: ProjectImage[] }[] = [
       { src: "/portfolio/K.png", title: "건축물 조성", description: "디자인(2024.11)" },
       { src: "/portfolio/L.png", title: "공원 식재", description: "식재 컨설팅 및 디자인(2024.10)" },
       { src: "/portfolio/O.png", title: "유원지 조성", description: "식재 컨설팅 및 디자인(2024.07)" },
-e880b95f (Initial commit for deployment)
     ],
   },
 ];
@@ -107,16 +32,8 @@ export default function Portfolio() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [centerIdx, setCenterIdx] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState<{
-    src: string;
-    title: string;
-    description: string;
-  } | null>(null);
-
   const [modalImage, setModalImage] = useState<ProjectImage | null>(null);
-e880b95f (Initial commit for deployment)
 
   useEffect(() => {
     const container = containerRef.current;
@@ -129,9 +46,7 @@ e880b95f (Initial commit for deployment)
 
       children.forEach((child, idx) => {
         const rect = (child as HTMLElement).getBoundingClientRect();
-        const distance = Math.abs(
-          rect.left + rect.width / 2 - window.innerWidth / 2
-        );
+        const distance = Math.abs(rect.left + rect.width / 2 - window.innerWidth / 2);
         if (distance < minDistance) {
           minDistance = distance;
           closestIdx = idx;
@@ -154,17 +69,11 @@ e880b95f (Initial commit for deployment)
       if (!containerRef.current || isScrolling) return;
 
       setIsScrolling(true);
-      if (e.deltaY < 0) {
-        containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
-      } else {
-        containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
-      }
-
       containerRef.current.scrollBy({
         left: e.deltaY < 0 ? -300 : 300,
         behavior: "smooth",
       });
-e880b95f (Initial commit for deployment)
+
       setTimeout(() => setIsScrolling(false), 600);
     };
 
@@ -181,19 +90,13 @@ e880b95f (Initial commit for deployment)
         포트폴리오
       </h2>
 
-
-
-e880b95f (Initial commit for deployment)
       <div
         id="portfolio-scroll-area"
         className="w-full overflow-hidden min-h-[90vh] flex items-center"
       >
         <div
           ref={containerRef}
-          className="overflow-x-scroll no-scrollbar flex items-center space-x-10 px-[50vw] snap-x snap-mandatory transition-all opacity duration-300 ease-in-out py-40"
-
           className="overflow-x-scroll no-scrollbar flex items-center space-x-10 px-[50vw] snap-x snap-mandatory transition-all duration-300 ease-in-out py-40"
-e880b95f (Initial commit for deployment)
         >
           {projects[0].images.map((image, idx) => {
             const isCenter = idx === centerIdx;
@@ -224,14 +127,7 @@ e880b95f (Initial commit for deployment)
                     alt={`프로젝트 이미지 ${idx + 1}`}
                     className="w-full h-full object-cover rounded-lg cursor-zoom-in pointer-events-auto"
                     onClick={() => {
-                      setModalImage({
-                        src: image.src,
-                        title: image.title,
-                        description: image.description,
-                      });
-
                       setModalImage(image);
-e880b95f (Initial commit for deployment)
                       setIsModalOpen(true);
                     }}
                   />
@@ -239,10 +135,7 @@ e880b95f (Initial commit for deployment)
 
                 {isCenter && (
                   <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4 pointer-events-none">
-                    <h3 className="text-2xl md:text-2x1 font-bold drop-shadow-md">
-
                     <h3 className="text-2xl md:text-2xl font-bold drop-shadow-md">
-e880b95f (Initial commit for deployment)
                       {image.title}
                     </h3>
                     <p className="mt-2 text-sm md:text-sm font-bold drop-shadow-md">
@@ -256,8 +149,6 @@ e880b95f (Initial commit for deployment)
         </div>
       </div>
 
-
-e880b95f (Initial commit for deployment)
       {isModalOpen && modalImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
