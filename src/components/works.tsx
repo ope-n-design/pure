@@ -35,14 +35,14 @@ export default function Works() {
       period: "2025.05~.06",
       client: "안현마을",
       role: "시공/투시도",
-      images: ["/images/안현마을(11).jpg", "/images/안현마을(22).jpg", "/images/안현마을(33).jpg"],
+      images: ["/images/안현마을11.jpg", "/images/안현마을22.jpg", "/images/안현마을33.jpg"],
     },
     {
       title: "함평자연생태공원 시공",
       period: "2025.05~.06",
       client: "함평군",
       role: "시공/투시도",
-      images: ["/images/동양란관(11).jpg", "/images/동양란관(22).jpg", "/images/동양란관(33).jpg"],
+      images: ["/images/동양란관11.jpg", "/images/동양란관22.jpg", "/images/동양란관33.jpg"],
     },
     {
       title: "고창군 성내어울림체육센터 디자인",
